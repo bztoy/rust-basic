@@ -2,8 +2,8 @@ pub mod variables;
 pub mod datatypes;
 pub mod functions;
 
-use crate::utils::terminal::write_subject;
+use crate::utils::terminal::write_title;
 
-pub fn programming_fundamental() {
-    write_subject("Common Programming Concept");
+pub fn programming_fundamental_title() {
+    write_title("Common Programming Concept");
 }

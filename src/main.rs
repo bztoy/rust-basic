@@ -3,9 +3,10 @@ use regex::Regex;
 pub mod fundamental;
 pub mod utils;
 
-use crate::fundamental::programming_fundamental;
-use crate::fundamental::datatypes::basic_date_types;
+use crate::fundamental::datatypes::basic_scala_data_types;
+use crate::fundamental::datatypes::basic_compound_data_types;
 use crate::fundamental::variables::basic_variables_in_rust;
+use crate::fundamental::functions::basic_functions_in_rust;
 
 struct Container {
     isx: bool,
@@ -23,16 +24,20 @@ impl Container {
 fn setup() -> Vec<Container> {
     let mut containers: Vec<Container> = Vec::new();
     containers.push(Container {
-        isx: true,
-        runner: programming_fundamental,
-    });
-    containers.push(Container {
-        isx: true,
+        isx: false,
         runner: basic_variables_in_rust,
     });
     containers.push(Container {
         isx: false,
-        runner: basic_date_types,
+        runner: basic_scala_data_types,
+    });
+    containers.push(Container {
+        isx: false,
+        runner: basic_compound_data_types,
+    });
+    containers.push(Container {
+        isx: true,
+        runner: basic_functions_in_rust,
     });
 
     return containers;

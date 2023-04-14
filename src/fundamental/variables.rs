@@ -1,14 +1,17 @@
+use crate::fundamental::programming_fundamental_title;
 use crate::utils::terminal::write_group;
 use crate::utils::terminal::section_break;
+use crate::utils::terminal::write_subject;
 
 pub fn basic_variables_in_rust() {
+    programming_fundamental_title();
     
     variables_and_mutibility();
     shadowning_variable();
 }
 
 fn variables_and_mutibility() {
-    write_group("Basic variables in Rust");
+    write_subject("Basic variables in Rust");
 
     let x = 5;
     print!("The value of immutable x is: {}\n", x);

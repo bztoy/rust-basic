@@ -1,23 +1,54 @@
 const ULINE_WIDGHT: u32 = 80;
 const LINE: char = '-';
 const UNDERLINE: char = '_';
+const TOP_BAR: char = '=';
+const GROUP: char = '+';
 
 use std::str;
 
-pub fn write_subject(header: &str) {
+pub fn write_title(title: &str) {
+    top();
+    println!("{}", title);
     underline();
+}
+
+pub fn write_subject(subject: &str) {
+    println!("{}", subject);
+    underline();
+}
+
+pub fn write_group(text: &str) {
+    group();
+    println!("{}", text);
+}
+
+pub fn write_subgroup(text: &str) {
     uline();
-    println!("{}", header);
+    println!("{}", text);
     uline();
 }
 
-pub fn write_group(group: &str) {
-    println!("{}", group);
-    uline();
+pub fn finished_line() {
+    println!(" ");
+    underline();
 }
 
 pub fn section_break() {
     uline();
+}
+
+fn top() {
+    for _ in 0..ULINE_WIDGHT {
+        print!("{}", TOP_BAR);
+    }
+    print!("\n");
+}
+
+fn group() {
+    for _ in 0..ULINE_WIDGHT {
+        print!("{}", GROUP);
+    }
+    print!("\n");
 }
 
 fn uline() {
@@ -26,6 +57,7 @@ fn uline() {
     }
     print!("\n");
 }
+
 fn underline() {
     for _ in 0..ULINE_WIDGHT {
         print!("{}", UNDERLINE);
