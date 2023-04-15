@@ -2,12 +2,15 @@ use regex::Regex;
 
 pub mod fundamental;
 pub mod utils;
+pub mod rustunique;
+pub mod rustfeatures;
 
 use crate::fundamental::datatypes::basic_scala_data_types;
 use crate::fundamental::datatypes::basic_compound_data_types;
 use crate::fundamental::variables::basic_variables_in_rust;
 use crate::fundamental::functions::basic_functions_in_rust;
 use crate::fundamental::controlflow::control_flow_in_rust;
+use crate::rustunique::ownership::rust_ownership_concept;
 
 struct Container {
     isx: bool,
@@ -24,6 +27,8 @@ impl Container {
 
 fn setup() -> Vec<Container> {
     let mut containers: Vec<Container> = Vec::new();
+
+    // Common Programming Concepts
     containers.push(Container {
         isx: false,
         runner: basic_variables_in_rust,
@@ -41,8 +46,14 @@ fn setup() -> Vec<Container> {
         runner: basic_functions_in_rust,
     });
     containers.push(Container {
-        isx: true,
+        isx: false,
         runner: control_flow_in_rust,
+    });
+
+    // Understanding Owership
+    containers.push(Container {
+        isx: true,
+        runner: rust_ownership_concept,
     });
 
     return containers;

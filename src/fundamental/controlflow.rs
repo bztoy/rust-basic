@@ -76,7 +76,7 @@ fn while_loop_basic() {
 fn loop_through_a_collection() {
     let a = [10, 20, 30, 40, 50, 60];
 
-    for element in a {
+    for element in a.iter() {
         println!("element: {}!", element);
     }
 }
