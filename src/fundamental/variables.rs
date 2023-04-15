@@ -2,12 +2,15 @@ use crate::fundamental::programming_fundamental_title;
 use crate::utils::terminal::write_group;
 use crate::utils::terminal::section_break;
 use crate::utils::terminal::write_subject;
+use crate::utils::terminal::finished_line;
 
 pub fn basic_variables_in_rust() {
     programming_fundamental_title();
     
     variables_and_mutibility();
     shadowning_variable();
+
+    finished_line();
 }
 
 fn variables_and_mutibility() {

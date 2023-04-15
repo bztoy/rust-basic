@@ -7,6 +7,7 @@ use crate::fundamental::datatypes::basic_scala_data_types;
 use crate::fundamental::datatypes::basic_compound_data_types;
 use crate::fundamental::variables::basic_variables_in_rust;
 use crate::fundamental::functions::basic_functions_in_rust;
+use crate::fundamental::controlflow::control_flow_in_rust;
 
 struct Container {
     isx: bool,
@@ -36,8 +37,12 @@ fn setup() -> Vec<Container> {
         runner: basic_compound_data_types,
     });
     containers.push(Container {
-        isx: true,
+        isx: false,
         runner: basic_functions_in_rust,
+    });
+    containers.push(Container {
+        isx: true,
+        runner: control_flow_in_rust,
     });
 
     return containers;

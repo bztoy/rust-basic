@@ -1,6 +1,7 @@
 pub mod variables;
 pub mod datatypes;
 pub mod functions;
+pub mod controlflow;
 
 use crate::utils::terminal::write_title;
 
