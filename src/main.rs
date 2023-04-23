@@ -1,9 +1,9 @@
-use regex::Regex;
 
 pub mod fundamental;
 pub mod utils;
 pub mod rustunique;
 pub mod rustfeatures;
+pub mod common;
 
 use crate::fundamental::datatypes::basic_scala_data_types;
 use crate::fundamental::datatypes::basic_compound_data_types;
@@ -11,6 +11,7 @@ use crate::fundamental::variables::basic_variables_in_rust;
 use crate::fundamental::functions::basic_functions_in_rust;
 use crate::fundamental::controlflow::control_flow_in_rust;
 use crate::rustunique::ownership::rust_ownership_concept;
+use crate::rustfeatures::structures::basic_structure_funtionality;
 
 struct Container {
     isx: bool,
@@ -52,8 +53,14 @@ fn setup() -> Vec<Container> {
 
     // Understanding Owership
     containers.push(Container {
-        isx: true,
+        isx: false,
         runner: rust_ownership_concept,
+    });
+
+    // Rust key features
+    containers.push(Container {
+        isx: true,
+        runner: basic_structure_funtionality,
     });
 
     return containers;
@@ -68,9 +75,6 @@ fn rununit(containers: &Vec<Container>) {
 }
 
 fn main() {
-
-    let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
-    println!("Did our date match? {}", re.is_match("2014-01-01"));
 
     let containers = setup();
     rununit(&containers);

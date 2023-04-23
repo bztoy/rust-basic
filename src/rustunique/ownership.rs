@@ -1,11 +1,11 @@
-use crate::rustunique::rust_unique_features;
+use crate::rustunique::rust_unique_title;
 use crate::utils::terminal::finished_line;
 use crate::utils::terminal::write_group;
 use crate::utils::terminal::write_subject;
 use crate::utils::terminal::write_subgroup;
 
 pub fn rust_ownership_concept() {
-    rust_unique_features();
+    rust_unique_title();
     write_subject("Variable Scope");
     write_subgroup("string literal and String");
     basic_variable_scope();
